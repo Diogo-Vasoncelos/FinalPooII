@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Sistema de Pedidos{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div style="max-width: 500px; margin: 0 auto;">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2 class="card-title">🔐 Login</h2>
+                <p class="text-secondary">Entre com suas credenciais</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('login') }}" id="loginForm">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="seu@email.com"
+                            required
+                        >
+                    </div>
+
+                    <!-- Senha -->
+                    <div class="form-group">
+                        <label for="senha" class="form-label">Senha *</label>
+                        <input 
+                            type="password" 
+                            id="senha" 
+                            name="senha" 
+                            class="form-input" 
+                            placeholder="Sua senha"
+                            required
+                        >
+                    </div>
+
+                    <!-- Botão Submit -->
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Entrar
+                    </button>
+                </form>
+
+                <!-- Link para Cadastro -->
+                <div class="text-center mt-3">
+                    <p class="text-secondary">
+                        Não tem uma conta? 
+                        <a href="{{ url_for('cadastro') }}" class="text-primary" style="font-weight: 500;">
+                            Cadastre-se aqui
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informações de Teste -->
+        <div class="card mt-3" style="background-color: #dbeafe; border-left: 4px solid var(--info);">
+            <h4 style="margin-bottom: 0.5rem;">ℹ️ Conta de Teste</h4>
+            <p style="margin: 0; color: var(--text-secondary);">
+                <strong>Admin:</strong> admin@sistema.com / senha: admin123
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
