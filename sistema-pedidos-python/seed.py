@@ -1,7 +1,10 @@
 """
 Script para popular banco de dados com produtos de exemplo
 """
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
+print("PASSWORD LIDO:", os.getenv("DB_PASSWORD"))
 from models.product import Product
 from models.user import User
 
@@ -105,7 +108,7 @@ try:
         nome='Administrador Sistema',
         email='admin@sistema.com',
         senha='admin123',
-        cpf='12345678901',
+        cpf='12402090618',
         telefone='11987654321',
         idade=25,
         endereco='Rua Exemplo, 123 - São Paulo - SP',
